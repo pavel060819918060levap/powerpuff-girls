@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render show when it is not passed 1`] = `<styled.div />`;
+
+exports[`should not render show when there is some error 1`] = `
+<styled.div>
+  <Error
+    title="Some error"
+  >
+    Something went wrong... :(
+  </Error>
+</styled.div>
+`;
+
+exports[`should render show when it is passed 1`] = `
+<styled.div>
+  <SectionTitle>
+    Test show
+  </SectionTitle>
+  <styled.div>
+    <styled.img
+      src="http://testurl.com"
+    />
+    <styled.div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>This is test show</p>",
+        }
+      }
+    />
+  </styled.div>
+  <SectionSubtitle>
+    Episodes
+  </SectionSubtitle>
+  <styled.ul>
+    <styled.li
+      key="30"
+    >
+      <Link
+        replace={false}
+        to="/show/123/2/3"
+      >
+        <styled.img
+          src="http://testurl.com"
+        />
+      </Link>
+    </styled.li>
+    <styled.li
+      key="31"
+    >
+      <Link
+        replace={false}
+        to="/show/123/1/4"
+      >
+        <styled.img
+          src="http://testurl.com"
+        />
+      </Link>
+    </styled.li>
+  </styled.ul>
+</styled.div>
+`;

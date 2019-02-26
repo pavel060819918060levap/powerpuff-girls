@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import 'normalize.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import configureStore from './store';
+import { Pages } from './pages';
+import { defaultTheme } from './styles/themes/default';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <Provider store={configureStore()}>
+    <ThemeProvider theme={defaultTheme}>
+      <Router>
+        <Pages />
+      </Router>
+    </ThemeProvider>
+  </Provider>,
+  document.getElementById('root')
+);
